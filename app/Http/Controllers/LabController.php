@@ -139,6 +139,16 @@ class LabController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //This is for delet this endPoint API Labs{Id}
+        $lab=Lab::find($id);
+        $result=$lab->delete();
+        if ($result) {
+            # code...
+            return ["Result"=>"Delete is Done"];
+        }
+        else{
+
+            return ["Result"=>"Delete is Don't Delete"];
+        }
     }
 }
