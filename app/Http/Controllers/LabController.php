@@ -16,8 +16,11 @@ class LabController extends Controller
     public function index()
     {
         //Call api 
-        return Lab::all();
+        // return Lab::all();
+        return Lab::with("analyses")->get(); // Assuming you have a Lab model
+        // return view("labs.index", compact('labs'));
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("Labs",function(){
-    return view("labs","LabController@index");
-});
+// Route::get("Labs",function(){
+//     return view("labs",[LabController::class,"index"]);
+// });

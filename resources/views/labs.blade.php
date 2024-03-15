@@ -7,6 +7,8 @@
     <title>Labs</title>
 </head>
 <body>
-       
+   @foreach ($labs as $lab)
+       {{$lab->name}}
+   @endforeach  
 </body>
 </html>
