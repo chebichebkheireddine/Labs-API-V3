@@ -18,41 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // User::factory(10)->create();
-        $lab=Lab::create(
-            [
-                "name" => "khiro",
-                "phone" => 213674646045,
-                "photo" => "test.png",
-                "address" => "Ain kermes"
-
-            ]
-        );	
-        $lab2=Lab::create(
-            [
-                "name" => "Chikhawi ahmed",
-                "phone" => 213674646045,
-                "photo" => "test.png",
-                "address" => "Ain kermes"
-
-            ]
-        );
-        Analyse::create(
-            [
-                "name"=>"CBC",
-                "parms"=>12,
-                "value"=>123,
-                "result"=>123,
-                "lab_id"=>$lab->id
-            ]
-        );
-        Analyse::create(
-            [
-                "name"=>"CBC",
-                "parms"=>12,
-                "value"=>123,
-                "result"=>123,
-                "lab_id"=>$lab->id
-            ]
-        );
+        // seed new data
+        Analyse::factory(3)->create();
     }
 }
