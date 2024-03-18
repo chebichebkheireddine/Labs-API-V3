@@ -15,11 +15,11 @@ class CreateAnalysesTable extends Migration
     {
         Schema::create('analyses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("lab_id");
             $table->string("name");
             $table->string("parms");
             $table->integer("value");
             $table->integer("result");
+            $table->foreignId("lab_id");
             // $table->timestamps();
         });
     }

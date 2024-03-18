@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LabController;
+use App\Models\Analyse;
 use App\Models\Lab;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home-page',["labs"=>Lab::all()]);
 });
+Route::get('/Analyses', function () {
+    return view('analyse',["labs"=>Analyse::all()]);
+});
+
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs",["labs"=>$labs]);
+});
+Route::get("/Analyses/{Analyses}", function (Analyse $analyses) {
+    return view("labs",["labs"=>$analyses->labs]);
 });
 // Route::get("Labs",function(){
 //     return view("labs",[LabController::class,"index"]);

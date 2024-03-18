@@ -17,7 +17,7 @@ class AnalyseFactory extends Factory
         return [
             //This is for catrgory
             "lab_id"=>Lab::factory(),
-            "name"=>$this->faker->name(["CBG","HGT","JHU"]),#this is  not work 
+            "name"=>$this->faker->randomElement(["CBG","HGT","JHU"]),#this is  not work 
             "parms"=>$this->faker->numberBetween(12,30),
             "value"=>$this->faker->numberBetween(1,30),
             "result"=>$this->faker->numberBetween(-10,30),
