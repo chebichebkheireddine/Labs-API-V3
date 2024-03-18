@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home-page',["labs"=>Lab::all()]);
 });
-Route::get("/labs", function (Lab $labs) {
+Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs",["labs"=>$labs]);
 });
 // Route::get("Labs",function(){

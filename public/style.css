@@ -1,13 +1,46 @@
-.logein-button{
-    background-color: #89CFF0;
-    color: white;
+.logein-button {
+    background-color: white;
+    color: black;
     font-size: 15px;
     text-decoration: none;
     border-radius: 50px;
     padding: 8px 20px;
     transition: 0.4 background-color;
 }
-.logein-button:hover{
-    background-color: red;
-    color: #1eCfF0;
+
+.logein-button:hover {
+    background-color: #89CFF0;
+    color: black;
+}
+
+.conlabs {
+    margin-top: 100px;
+}
+.navbar {
+    background-color: #1eCfF0;
+
+}
+
+.card:hover {
+    box-shadow: #1eCfF0;
+    color: black;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5); 
+    transition: ease-in;
+}
+
+.card {
+    margin-top: 10px;
+}
+.btn.btn-primary{
+    margin: 20px 10px 0px 10px;
+    background-color: #1eCfF0;
+    border: none;
+    width: auto;
+}
+.btn.btn-primary:hover{
+    background-color: #89CFF0;
+    color: black;
+}
+.img-fluid .img-thumbnail{
+    background-color: #1eCfF0;
 }

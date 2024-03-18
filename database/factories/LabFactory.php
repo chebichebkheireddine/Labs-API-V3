@@ -17,7 +17,7 @@ class LabFactory extends Factory
             //This is seed 
             "name"=>$this->faker->name,
             "phone"=>$this->faker->phoneNumber(),
-            "photo"=>$this->faker->name().".png",
+            "photo"=>"image.png",
             "address"=>$this->faker->address(),
         ];
     }
