@@ -16,7 +16,7 @@ class AnalyseController extends Controller
     public function index( )
     {
         //This is Analyse
-        return Analyse::all();
+        return Analyse::with("labs")->get();
     }
 
     /**

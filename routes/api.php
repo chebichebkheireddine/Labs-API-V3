@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource("Labs",LabController::class);
-Route::apiResource("Analyse",AnalyseController::class);
+Route::apiResource("Analyses",AnalyseController::class);
 Route::get("test/{id}",[TestController::class,"test"]);
 Route::apiResource("dbtest",LabController::class);
 // must be car full with name of ref
