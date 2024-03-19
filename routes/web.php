@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('home-page',["labs"=>Lab::all()]);
 });
 Route::get('/Analyses', function () {
-    return view('analyse',["labs"=>Analyse::all()]);
+    return view('analyse',["labs"=>Analyse::all()->load("labs")]);
 });
 
 Route::get("/labs/{labs}", function (Lab $labs) {

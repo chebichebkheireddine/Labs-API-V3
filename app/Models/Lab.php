@@ -9,7 +9,7 @@ class Lab extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $with=["analyses"];
+    // protected $with=["analyses"];
     public function analyses()
     {
         return $this->hasMany(Analyse::class);
