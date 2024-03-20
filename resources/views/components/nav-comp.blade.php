@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top  bg-blue-300">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Tahalili</a>
-        
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel">
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tahalili</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -17,7 +16,7 @@
                         <a class="nav-link" href="/Analyses">Analyses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Labs</a>
+                        <a class="nav-link" href="/labs">Labs</a>
                     </li>
                 </ul>
 

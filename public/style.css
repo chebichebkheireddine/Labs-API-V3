@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .logein-button {
     background-color: white;
     color: black;
@@ -9,7 +12,7 @@
 }
 
 .logein-button:hover {
-    background-color: #89CFF0;
+    background-color: #89cff0;
     color: black;
 }
 
@@ -17,30 +20,29 @@
     margin-top: 100px;
 }
 .navbar {
-    background-color: #1eCfF0;
-
+    background-color: #1ecff0;
 }
 
 .card:hover {
-    box-shadow: #1eCfF0;
+    box-shadow: #1ecff0;
     color: black;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
     transition: ease-in;
 }
 
 .card {
     margin-top: 10px;
 }
-.btn.btn-primary{
+.btn.btn-primary {
     margin: 20px 10px 0px 10px;
-    background-color: #1eCfF0;
+    background-color: #1ecff0;
     border: none;
     width: auto;
 }
-.btn.btn-primary:hover{
-    background-color: #89CFF0;
+.btn.btn-primary:hover {
+    background-color: #89cff0;
     color: black;
 }
-.img-fluid .img-thumbnail{
-    background-color: #1eCfF0;
+.img-fluid .img-thumbnail {
+    background-color: #1ecff0;
 }
