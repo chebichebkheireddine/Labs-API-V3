@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 .logein-button {
     background-color: white;
     color: black;
@@ -22,7 +19,16 @@
 .navbar {
     background-color: #1ecff0;
 }
-
+.navbar-nav .nav-item .nav-link.active {
+    font-weight: 100px; /* Example: Set font weight to bold */
+    color: #000; /* Example: Set text color to white */
+    background-color: white;
+    border-radius: 40px;
+    text-align: center;
+    padding: auto;
+    /* Example: Set background color to blue */
+    /* Add any other styles as needed */
+}
 .card:hover {
     box-shadow: #1ecff0;
     color: black;

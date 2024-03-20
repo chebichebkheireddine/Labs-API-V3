@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top  bg-blue-300">
+<nav class="navbar navbar-expand-lg fixed-top bg-blue-300">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Tahalili</a>
 
@@ -10,13 +10,14 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Analyses">Analyses</a>
+                        <a class="nav-link {{ request()->is('Analyses') ? 'active' : '' }}"
+                            href="/Analyses">Analyses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/labs">Labs</a>
+                        <a class="nav-link {{ request()->is('labs') ? 'active' : '' }}" href="/labs">Labs</a>
                     </li>
                 </ul>
 
