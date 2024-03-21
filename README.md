@@ -12,6 +12,24 @@ The Labs API V3 is a RESTful API built using Laravel framework. It provides vari
 -   Search functionality
 -   Pagination support
 
+## Laravel Installation
+
+To install Laravel, follow these steps:
+
+1. Install Composer: Visit the [Composer website](https://getcomposer.org/) and follow the installation instructions for your operating system.
+2. Open a terminal or command prompt and navigate to the project directory.
+3. Run the following command to create a new Laravel project: `composer create-project --prefer-dist laravel/laravel project-name`
+4. Once the installation is complete, navigate to the project directory: `cd project-name`
+5. Start the development server: `php artisan serve`
+
+## Lancast Tutorial
+
+To access the Lancast tutorial, follow these steps:
+
+1. Visit the [Lancast website](https://www.lancast.com/) and create an account.
+2. Once logged in, navigate to the tutorial section.
+3. Follow the instructions provided in the tutorial to learn and practice Laravel development.
+
 ## Installation
 
 To install and run the project, follow these steps:

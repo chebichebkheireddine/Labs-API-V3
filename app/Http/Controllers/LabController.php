@@ -16,7 +16,10 @@ class LabController extends Controller
      */
     public function search()
     {
-        $post = Lab::latest();
+        // you can use anthor way to search without use latest fuloow this code
+        // add query to search
+        $post = Lab::query();
+        // $post = Lab::latest();
         if (request("sherch")) {
             return view('home-page', [
                 "labs" => $post->where("name", "like", "%" . request("sherch") . "%")
