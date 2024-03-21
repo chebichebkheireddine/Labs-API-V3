@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home-page', [
         "labs" => Lab::all(),
+
         "analyses" => Analyse::all()
     ]);
 });
