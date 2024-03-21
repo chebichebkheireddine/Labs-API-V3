@@ -22,34 +22,31 @@ Route::get('/', function () {
 
         "analyses" => Analyse::all()
     ]);
-});
+})->name("home-page");
 Route::get('/Analyses', function (Analyse $analyse) {
     return view('analyses', [
         "analyses" => Analyse::all()->load("labs"),
         'currentLab' => $analyse,
         "analyse" => $analyse
     ]);
-});
+})->name("analyses");
 
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs", [
         "labs" => $labs,
         "analyses" => Analyse::all()
     ]);
-});
+})->name("labs-tag");
 Route::get("/labs", function () {
     return view("home-page", [
         "labs" => Lab::all(),
         "analyses" => Analyse::all()
     ]);
-});
+})->name("labs");
 Route::get("/Analyses/{analyse}", function (Analyse $analyse) {
     return view("analyse", [
         "analyse" => $analyse,
         'currentLab' => $analyse,
         "analyses" => Analyse::all()->load("labs")
     ]);
-});
-// Route::get("Labs",function(){
-//     return view("labs",[LabController::class,"index"]);
-// });
+})->name("analyse-tag");

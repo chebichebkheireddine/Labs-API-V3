@@ -1,7 +1,6 @@
 <x-layout>
     <x-nav-comp></x-nav-comp>
     <div class="container conlabs">
-
         @include('components.dropdown-analyses')
         <div class="row">
             @foreach ($analyses as $lab)

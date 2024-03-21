@@ -10,14 +10,16 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
+                        <a class="nav-link {{ request()->routeIs('home-page') ? 'active' : '' }}"
+                            href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('Analyses') ? 'active' : '' }}"
+                        <a class="nav-link {{ request()->routeIs('analyses') || request()->routeIs('analyse-tag') ? 'active' : '' }}"
                             href="/Analyses">Analyses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('labs') ? 'active' : '' }}" href="/labs">Labs</a>
+                        <a class="nav-link {{ request()->is('labs') || request()->routeIs('labs-tag') ? 'active' : '' }}"
+                            href="/labs">Labs</a>
                     </li>
                 </ul>
 
