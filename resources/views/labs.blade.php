@@ -5,21 +5,22 @@
     </x-nav-comp>
     <div class="container conlabs">
         <div class="row">
-            <div class="col-2">
+            <div class="col-3">
 
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                        Dropdown button
+                        {{ isset($currentLab) ? $currentLab->name : 'All Labs' }}
                     </button>
                     <ul class="dropdown-menu">
-                        @foreach ($analyses as $analyse)
-                            <li><a class="dropdown-item" href="/Analyses/{{ $analyse->id }}">{{ $analyse->name }}</a>
+                        @foreach ($analyses as $item)
+                            <li><a class="dropdown-item" href="/Analyses/{{ $item->id }}">{{ $item->name }}</a>
                             </li>
                         @endforeach
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-2">
                 <div class="card" style="width: 18rem;">

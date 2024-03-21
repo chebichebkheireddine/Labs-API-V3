@@ -7,7 +7,7 @@
 
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                        Analyses
+                        {{ isset($currentLab) ? $currentLab->name : 'All Labs' }}
                     </button>
                     <ul class="dropdown-menu">
                         @foreach ($analyses as $item)
@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             @foreach ($labs as $lab)
                 <div class="col-4">

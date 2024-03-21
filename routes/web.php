@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::get('/Analyses', function (Analyse $analyse) {
     return view('analyses', [
         "analyses" => Analyse::all()->load("labs"),
+        'currentLab' => $analyse,
         "analyse" => $analyse
     ]);
 });
@@ -44,6 +45,7 @@ Route::get("/labs", function () {
 Route::get("/Analyses/{analyse}", function (Analyse $analyse) {
     return view("analyse", [
         "analyse" => $analyse,
+        'currentLab' => $analyse,
         "analyses" => Analyse::all()->load("labs")
     ]);
 });
