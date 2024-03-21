@@ -17,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (request("sherch")) {
+        return view('home-page', [
+            "labs" => Lab::where("name", "like", "%" . request("sherch") . "%")->get(),
+            "analyses" => Analyse::where("name", "like", "%" . request("sherch") . "%")->get()
+        ]);
+    }
     return view('home-page', [
         "labs" => Lab::all(),
-
         "analyses" => Analyse::all()
     ]);
 })->name("home-page");
@@ -34,6 +39,7 @@ Route::get('/Analyses', function (Analyse $analyse) {
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs", [
         "labs" => $labs,
+        'currentLab' => $labs,
         "analyses" => Analyse::all()
     ]);
 })->name("labs-tag");

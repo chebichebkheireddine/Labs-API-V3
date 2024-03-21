@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         // seed new data
         // Lab::factory(4)->create();
-        Analyse::factory(5)->create();
+        Analyse::factory(50)->create();
     }
 }

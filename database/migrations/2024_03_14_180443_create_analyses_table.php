@@ -15,7 +15,7 @@ class CreateAnalysesTable extends Migration
     {
         Schema::create('analyses', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name")->unique();
             $table->string("parms");
             $table->integer("value");
             $table->integer("result");
