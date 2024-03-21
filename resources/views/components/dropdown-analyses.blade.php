@@ -16,7 +16,8 @@
     <div class="col-6">
         <form action="#" method="get">
             <div class="input-group">
-                <input type="text" name="sherch" class="form-control" placeholder="Search">
+                <input type="text" name="sherch" class="form-control" value="{{ request('sherch') }}"
+                    placeholder="Search">
             </div>
     </div>
 </div>

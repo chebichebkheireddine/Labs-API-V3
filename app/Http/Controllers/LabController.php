@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Analyse;
 use App\Models\Lab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,9 +14,23 @@ class LabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search()
+    {
+        $post = Lab::all();
+        if (request("sherch")) {
+            return view('home-page', [
+                "labs" => $post->where("name", "like", "%" . request("sherch") . "%"),
+                "analyses" => Analyse::where("name", "like", "%" . request("sherch") . "%")->get()
+            ]);
+        }
+        return view('home-page', [
+            "labs" => Lab::all(),
+            "analyses" => Analyse::all(),
+        ]);
+    }
     public function index()
     {
-        //Call api 
+        //Call api
         // return Lab::all();
         return Lab::with("analyses")->get(); // Assuming you have a Lab model
         // return view("labs.index", compact('labs'));
@@ -40,13 +55,13 @@ class LabController extends Controller
      */
     public function store(Request $request)
     {
-        // Add validator to this code 
+        // Add validator to this code
         $ruls = array(
-            
-                "name" => "required",
-                "phone" => "required",
-                "photo" => "required",
-                "address" => "required",
+
+            "name" => "required",
+            "phone" => "required",
+            "photo" => "required",
+            "address" => "required",
         );
         // Call validator
         $validator = Validator::make($request->all(), $ruls);
@@ -92,7 +107,7 @@ class LabController extends Controller
     public function edit($id)
     {
         //How to use it is not Allows to use here
-        
+
     }
 
     /**
@@ -105,19 +120,19 @@ class LabController extends Controller
     public function update(Request $request, $id)
     {
         //This with updata
-        $rules=array(
-            "id"=>"required",
+        $rules = array(
+            "id" => "required",
             "name" => "required",
             "phone" => "required",
             "photo" => "required",
             "address" => "required",
         );
-        $validator=Validator::make($request->all(),$rules);
+        $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 401);
         } else {
             //This is for save the data
-            $labs =Lab::find($id);
+            $labs = Lab::find($id);
             $labs->id = $request->id;
             $labs->name = $request->name;
             $labs->phone = $request->phone;
@@ -143,15 +158,14 @@ class LabController extends Controller
     public function destroy($id)
     {
         //This is for delet this endPoint API Labs{Id}
-        $lab=Lab::find($id);
-        $result=$lab->delete();
+        $lab = Lab::find($id);
+        $result = $lab->delete();
         if ($result) {
             # code...
-            return ["Result"=>"Delete is Done"];
-        }
-        else{
+            return ["Result" => "Delete is Done"];
+        } else {
 
-            return ["Result"=>"Delete is Don't Delete"];
+            return ["Result" => "Delete is Don't Delete"];
         }
     }
 }

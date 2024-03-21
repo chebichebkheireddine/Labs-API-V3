@@ -16,18 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    if (request("sherch")) {
-        return view('home-page', [
-            "labs" => Lab::where("name", "like", "%" . request("sherch") . "%")->get(),
-            "analyses" => Analyse::where("name", "like", "%" . request("sherch") . "%")->get()
-        ]);
-    }
-    return view('home-page', [
-        "labs" => Lab::all(),
-        "analyses" => Analyse::all()
-    ]);
-})->name("home-page");
+Route::get('/', [LabController::class, "search"])->name("home-page");
+
+
+
 Route::get('/Analyses', function (Analyse $analyse) {
     return view('analyses', [
         "analyses" => Analyse::all()->load("labs"),
