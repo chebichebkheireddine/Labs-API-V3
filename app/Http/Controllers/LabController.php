@@ -16,10 +16,11 @@ class LabController extends Controller
      */
     public function search()
     {
-        $post = Lab::all();
+        $post = Lab::latest();
         if (request("sherch")) {
             return view('home-page', [
-                "labs" => $post->where("name", "like", "%" . request("sherch") . "%"),
+                "labs" => $post->where("name", "like", "%" . request("sherch") . "%")
+                    ->orWhere("address", "like", "%" . request("sherch") . "%")->get(),
                 "analyses" => Analyse::where("name", "like", "%" . request("sherch") . "%")->get()
             ]);
         }

@@ -10,8 +10,9 @@ class Analyse extends Model
     use HasFactory;
     // protected $fillable=["name","parms","value","result"];
     public $timestamps = false;
-    // protected $with=["labs"];
-    public function labs(){
-        return $this->belongsTo(Lab::class,"lab_id");
-    } 
+    protected $with = ["labs"];
+    public function labs()
+    {
+        return $this->belongsTo(Lab::class, "lab_id");
+    }
 }
