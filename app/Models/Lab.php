@@ -12,7 +12,7 @@ class Lab extends Model
     // protected $with=["analyses"];
     public function scopeFilter($query)
     {
-        if (request("sherch")) {
+        if (request("search")) {
             return $query->where("name", "like", "%" . request("sherch") . "%")
                 ->orWhere("address", "like", "%" . request("sherch") . "%");
         }

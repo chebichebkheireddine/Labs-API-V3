@@ -15,7 +15,7 @@
 <div class="col-6  mt-3">
     <form action="#" method="get">
         <div class="input-group">
-            <input type="text" name="sherch" class="form-control" value="{{ request('sherch') }}"
+            <input type="text" name="search" class="form-control" value="{{ request('search') }}"
                 placeholder="Search">
         </div>
 </div>
