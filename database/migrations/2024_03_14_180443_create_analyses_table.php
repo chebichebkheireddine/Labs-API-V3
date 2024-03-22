@@ -18,7 +18,6 @@ class CreateAnalysesTable extends Migration
             $table->string("name")->unique();
             $table->string("parms");
             $table->integer("value");
-            $table->integer("result");
             $table->foreignId("lab_id");
             // $table->timestamps();
         });

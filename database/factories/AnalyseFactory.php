@@ -20,7 +20,7 @@ class AnalyseFactory extends Factory
             "name" => $this->faker->unique()->word(), #this is  not work
             "parms" => $this->faker->numberBetween(12, 30),
             "value" => $this->faker->numberBetween(1, 30),
-            "result" => $this->faker->numberBetween(-10, 30),
+
         ];
     }
 }
