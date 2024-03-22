@@ -18,10 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LabController::class, "index"])->name("home-page");
-
-
-
-Route::get('/Analyses', [AnalyseController::class, "show"])->name("analyses");
+Route::get('/Analyses', [AnalyseController::class, "index"])->name("analyses");
 
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs", [

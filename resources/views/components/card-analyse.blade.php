@@ -6,8 +6,8 @@
             <a href="#" class="card-link"> {{ $analyse->name }}</a>
             <blockquote class="blockquote mb-0">
                 <p>Information</p>
-                <footer class="blockquote-footer">Address {{ $analyse->value }} </footer>
-                <footer class="blockquote-footer">Address {{ $analyse->parms }} </footer>
+                <footer class="blockquote-footer">Parms {{ $analyse->parms }} </footer>
+                <footer class="blockquote-footer">Value {{ $analyse->value }} </footer>
             </blockquote>
             <a href="/labs/{{ $analyse->id }}" class="btn btn-primary  bg-blue-300">More information</a>
         </div>

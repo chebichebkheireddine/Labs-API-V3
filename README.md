@@ -45,6 +45,83 @@ To install and run the project, follow these steps:
 
 Once the project is up and running, you can use tools like Postman to interact with the API endpoints. Refer to the API documentation for detailed usage instructions.
 
+# Lab API Endpoints
+
+## GET /api/labs
+
+This endpoint retrieves all labs along with their associated analyses.
+
+## POST /api/labs
+
+This endpoint creates a new lab. The request body should include the following fields:
+
+-   `name`: The name of the lab (required)
+-   `phone`: The phone number of the lab (required)
+-   `photo`: The photo of the lab (required)
+-   `address`: The address of the lab (required)
+
+If the request is successful, it returns a JSON response with a message indicating that the lab has been added.
+
+## GET /api/labs/{id}
+
+This endpoint retrieves the lab with the specified ID.
+
+## PUT /api/labs/{id}
+
+This endpoint updates the lab with the specified ID. The request body should include the following fields:
+
+-   `id`: The ID of the lab (required)
+-   `name`: The new name of the lab (required)
+-   `phone`: The new phone number of the lab (required)
+-   `photo`: The new photo of the lab (required)
+-   `address`: The new address of the lab (required)
+
+If the request is successful, it returns a JSON response with a message indicating that the lab has been updated.
+
+## DELETE /api/labs/{id}
+
+This endpoint deletes the lab with the specified ID. If the request is successful, it returns a JSON response with a message indicating that the lab has been deleted.
+
+## GET /api/labs/search
+
+This endpoint retrieves labs and analyses based on a search term. The search term should be provided as a query parameter named `sherch`. The search term is used to filter the labs and analyses based on their `name` and `address` fields.
+
+# Analyse API Endpoints
+
+## GET /api/analyses
+
+This endpoint retrieves all analyses along with their associated labs.
+
+## POST /api/analyses
+
+This endpoint creates a new analysis. The request body should include the following fields:
+
+-   `name`: The name of the analysis (required)
+-   `parms`: The parameters of the analysis (required)
+-   `value`: The value of the analysis (required)
+-   `lab_id`: The ID of the associated lab (required)
+
+## GET /api/analyses/{id}
+
+This endpoint retrieves the analysis with the specified ID.
+
+## PUT /api/analyses/{id}
+
+This endpoint updates the analysis with the specified ID. The request body should include the following fields:
+
+-   `name`: The new name of the analysis (required)
+-   `parms`: The new parameters of the analysis (required)
+-   `value`: The new value of the analysis (required)
+-   `lab_id`: The new ID of the associated lab (required)
+
+## DELETE /api/analyses/{id}
+
+This endpoint deletes the analysis with the specified ID.
+
+## GET /api/analyses/search
+
+This endpoint retrieves analyses based on a search term. The search term should be provided as a query parameter named `sherch`. The search term is used to filter the analyses based on their `name` and `parms` fields.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.

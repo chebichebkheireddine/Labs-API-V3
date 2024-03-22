@@ -1,56 +1,79 @@
 .logein-button {
-    background-color: white;
-    color: black;
-    font-size: 15px;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 8px 20px;
-    transition: 0.4 background-color;
+    background-color: #e81414cc; /* Green background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    text-decoration: none; /* Remove underline */
+    border-radius: 30px; /* Rounded corners */
+    padding: 15px 30px; /* Increase padding */
+    transition: all 0.5s; /* Add transition effect */
+}
+.navbar-brand img {
+    height: 50px; /* Adjust as needed */
+    width: auto; /* Keep the aspect ratio */
+    margin-right: 10px; /* Add some space between the logo and the following content */
 }
 
 .logein-button:hover {
-    background-color: #89cff0;
-    color: black;
+    background-color: #45a049; /* Darker green background on hover */
+    color: white; /* White text on hover */
 }
 
 .conlabs {
     margin-top: 100px;
-}.navbar {
-    background-color: #1ecff0;
+}
+
+.navbar {
+    background-color: #1ecff080;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .navbar-nav .nav-item .nav-link.active {
     font-weight: bold; /* Set font weight to bold */
-    color: #000; /* Set text color to black */
-    background-color: #fff; /* Set background color to white */
-    border-radius: 20px; /* Reduce border radius for a less circular shape */
+    color: #e81414cc; /* Set text color to green */
     text-align: center;
     padding: 10px 20px; /* Add some padding */
+    transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
+    border-bottom: 7px solid #e81414cc; /* Add a green border to the bottom */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* White text */
+    font-weight: bold; /* Bold font */
+    padding: 10px 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #45a049; /* Black text on hover */
+    border-bottom: 7px solid #45a049; /* Add a green border to the bottom on hover */
 }
 
 .card:hover {
     color: black;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
     transition: all 0.3s ease-in; /* Smooth transition */
 }
+
 .card {
     margin-top: 10px;
 }
+
 .btn {
     margin-top: 10px;
 }
 
 .btn.btn-primary {
     margin: 20px 10px 0 10px;
-    background-color: #1ecff0;
+    background-color: #1ecff0; /* Light blue background */
     border: none;
 }
 
 .btn.btn-primary:hover {
-    background-color: #89cff0;
-    color: black;
+    background-color: #1ecff080; /* Lighter blue background on hover */
+    color: black; /* Black text on hover */
 }
 
 .img-fluid, .img-thumbnail {
-    background-color: #1ecff0;
+    background-color: #1ecff0; /* Light blue background */
 }

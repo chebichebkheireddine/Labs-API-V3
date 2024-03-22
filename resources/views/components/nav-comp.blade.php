@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-blue-300">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Tahalili</a>
+        <a class="navbar-brand" href="/">
+            <img src="{{ asset('images/T.png') }}" alt="logo">
+        </a>
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">

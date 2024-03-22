@@ -34,22 +34,22 @@ class LabController extends Controller
     }
     public function index()
     {
-        // you can use anthor way to search without use latest fuloow this code
-        // add query to search
-        $post = Lab::query();
+
+
+        $labs = Lab::query();
 
         return view('home-page', [
-            "labs" => $post->filter()->get(),
+            "labs" => $labs->filter(request(["search"]))->get(),
             "analyses" => Analyse::all(),
         ]);
     }
 
-    public function show(Analyse $analyse)
-    {
-        return view('analyses', [
-            "analyses" => Analyse::all()->load("labs"),
-            'currentLab' => $analyse,
-            "analyse" => $analyse
-        ]);
-    }
+    // public function show(Analyse $analyse)
+    // {
+    //     return view('analyses', [
+    //         "analyses" => Analyse::all()->load("labs"),
+    //         'currentLab' => $analyse,
+    //         "analyse" => $analyse
+    //     ]);
+    // }
 }

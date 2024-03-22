@@ -10,12 +10,18 @@ class Lab extends Model
     use HasFactory;
     public $timestamps = false;
     // protected $with=["analyses"];
-    public function scopeFilter($query)
+    public function scopeFilter($query, array $filters)
     {
-        if (request("search")) {
-            return $query->where("name", "like", "%" . request("sherch") . "%")
-                ->orWhere("address", "like", "%" . request("sherch") . "%");
-        }
+        // when to bulde the scope query localy
+        $query->when($filters["search"] ?? false, function ($query, $search) {
+            return $query->where("name", "like", "%" . $search . "%")
+                ->orWhere("address", "like", "%" . $search . "%");
+        });
+
+        // if ($filters["search"] ?? false) {
+        //     $query->where("name", "like", "%" . request("sherch") . "%")
+        //         ->orWhere("address", "like", "%" . request("sherch") . "%");
+        // }
     }
     public function analyses()
     {

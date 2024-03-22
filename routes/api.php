@@ -23,8 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::apiResource("Labs", LabController::class);
 Route::apiResource("Analyses", AnalyseController::class);
-// Route::get("test/{id}",[TestController::class,"test"]);
-// Route::apiResource("dbtest",LabController::class);
-// this Rout for Analyses to display
-Route::get("analyses", [AnalyseController::class, "index"]);
 // this Rout for Labs to display
