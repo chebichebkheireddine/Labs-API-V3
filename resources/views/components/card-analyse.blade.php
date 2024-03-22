@@ -1,6 +1,6 @@
 @props(['analyse'])
-<div class="col-2">
-    <div class="card" style="width: 18rem;">
+<div class="col-md-2">
+    <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{ $analyse->name }}</h5>
             <a href="#" class="card-link"> {{ $analyse->name }}</a>

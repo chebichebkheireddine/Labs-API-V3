@@ -2,7 +2,7 @@
 <div class="row">
     @foreach ($analyses as $lab)
         <div class="col-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ $lab->name }}</h5>
                     <a href="/labs/{{ $lab->lab_id }}" class="card-link">Lab {{ $lab->labs->name }}</a>

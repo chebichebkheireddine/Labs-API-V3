@@ -7,21 +7,18 @@
         <div class="row">
             @include('components.dropdown-analyses')
 
-            <div class="row">
-                <div class="col-2">
-                    @if ($labs->count())
-                        <x-card-lab :labs="$labs">
+            @if ($labs->count())
+                <x-card-lab :labs="$labs">
 
-                        </x-card-lab>
-                        <!-- Content here -->
-                    @else
-                        <div class='alert alert-primary' role='alert'>
-                            no labs or analyses found with this name
-                        </div>
-                    @endif
-                </div>ٍ
+                </x-card-lab>
+                <!-- Content here -->
+            @else
+                <div class='alert alert-primary' role='alert'>
+                    no labs or analyses found with this name
+                </div>
+            @endif
+        </div>ٍ
 
-            </div>
-        </div>
+
     </div>
 </x-layout>

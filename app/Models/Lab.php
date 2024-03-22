@@ -17,6 +17,12 @@ class Lab extends Model
             return $query->where("name", "like", "%" . $search . "%")
                 ->orWhere("address", "like", "%" . $search . "%");
         });
+        // Lab  category search
+        $query->when($filters["analyses"] ?? false, function ($query, $search) {
+            return $query->where("name", "like", "%" . $search . "%")
+                ->orWhere("address", "like", "%" . $search . "%");
+        });
+
 
         // if ($filters["search"] ?? false) {
         //     $query->where("name", "like", "%" . request("sherch") . "%")

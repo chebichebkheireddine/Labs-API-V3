@@ -49,14 +49,19 @@
     border-bottom: 7px solid #45a049; /* Add a green border to the bottom on hover */
 }
 
-.card:hover {
-    color: black;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
-    transition: all 0.3s ease-in; /* Smooth transition */
+.card {
+    margin-top: 20px; /* Increase margin */
+    padding: 20px; /* Add padding */
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-.card {
-    margin-top: 10px;
+.card:hover {
+    color: black;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+    transform: scale(1.02); /* Slightly increase size on hover */
+    transition: all 0.3s ease-in; /* Smooth transition */
 }
 
 .btn {
@@ -76,4 +81,14 @@
 
 .img-fluid, .img-thumbnail {
     background-color: #1ecff0; /* Light blue background */
+    border-radius: 5px; /* Rounded corners */
+    width: max-content;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.img-fluid:hover, .img-thumbnail:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
