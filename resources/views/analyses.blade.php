@@ -1,8 +1,9 @@
 <x-layout>
     <x-nav-comp></x-nav-comp>
     <div class="container conlabs">
-        @include('components.dropdown-analyses')
         <div class="row">
+            @include('components.dropdown-analyses')
+
 
             @if ($analyses->count())
                 <x-card-analyses :analyses="$analyses">
@@ -14,8 +15,10 @@
                 </div>
             @endif
 
+
         </div>
     </div>
+
 
 
 </x-layout>

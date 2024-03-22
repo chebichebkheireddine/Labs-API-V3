@@ -4,15 +4,17 @@
 
     </x-nav-comp>
     <div class="container conlabs">
-        @include('components.dropdown-analyses')
-
         <div class="row">
-            @if ($analyses->count())
-                <x-card-analyse :analyse="$analyse">
-                </x-card-analyse>
-                <!-- Content here -->
-            @endif
+            @include('components.dropdown-analyses')
 
+            <div class="row">
+                @if ($analyses->count())
+                    <x-card-analyse :analyse="$analyse">
+                    </x-card-analyse>
+                    <!-- Content here -->
+                @endif
+
+            </div>
         </div>
     </div>
 </x-layout>
