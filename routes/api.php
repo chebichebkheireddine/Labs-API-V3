@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AnalyseController;
-use App\Http\Controllers\LabController;
-use App\Http\Controllers\TestController;
-use App\Models\Analyse;
+use App\Http\Controllers\Api\AnalyseController;
+use App\Http\Controllers\Api\LabController;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
