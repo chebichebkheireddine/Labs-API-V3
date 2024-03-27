@@ -19,7 +19,7 @@ class dropDownItem extends Component
         return view('components.drop-down-item', [
             'currentLab' => Analyse::firstWhere("id", request("labs")),
             "items" => Analyse::all(),
-            "analyses" => Analyse::all(),
+            "analyse" => Analyse::all(),
         ]);
     }
 }

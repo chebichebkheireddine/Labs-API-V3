@@ -1,7 +1,7 @@
 @props(['labs'])
 
 <div class="card mb-4 shadow-sm mx-auto ">
-    <img src="../images/{{ $labs->photo }}" class="img-fluid img-thumbnail " alt="...">
+    <img src=".../images/{{ $labs->photo }}" class="img-fluid img-thumbnail " alt="...">
     <div class="card-body">
         <h5 class="card-title">{{ $labs->name }}</h5>
         <a href="#" class="card-link">Phone {{ $labs->phone }}</a>

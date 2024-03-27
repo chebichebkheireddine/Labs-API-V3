@@ -3,7 +3,7 @@
     @foreach ($labs as $lab)
         <div class="col-4">
             <div class="card  mb-4 shadow-sm mx-auto ">
-                <img src="./images/{{ $lab->photo }}" class="img-fluid img-thumbnail" alt="...">
+                <img src="../images/{{ $lab->photo }}" class="img-fluid img-thumbnail" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $lab->name }}</h5>
                     <a href="#" class="card-link">Phone {{ $lab->phone }}</a>

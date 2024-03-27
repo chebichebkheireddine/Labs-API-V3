@@ -8,7 +8,7 @@
             @include('components.dropdown-analyses')
 
             <div class="row">
-                @if ($analyses->count())
+                @if ($analyse->count())
                     <x-card-analyse :analyse="$analyse">
                     </x-card-analyse>
                     <!-- Content here -->
