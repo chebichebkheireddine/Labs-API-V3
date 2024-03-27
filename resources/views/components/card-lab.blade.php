@@ -10,7 +10,7 @@
             <footer class="blockquote-footer">Address {{ $labs->address }} </footer>
             <p>available analysis </p>
             @foreach ($labs->analyses as $analysis)
-                <a href="/labs/{{ $analysis->lab_id }}" type="button"
+                <a href="/labs/?analyses={{ $analysis->name }}" type="button"
                     class="btn btn-outline-primary">{{ $analysis->name }}</a>
             @endforeach
         </blockquote>

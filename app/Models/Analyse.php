@@ -17,11 +17,15 @@ class Analyse extends Model
             return $query->where("name", "like", "%" . $search . "%")
                 ->orWhere("parms", "like", "%" . $search . "%");
         });
-
-        // if ($filters["search"] ?? false) {
-        //     $query->where("name", "like", "%" . request("sherch") . "%")
-        //         ->orWhere("address", "like", "%" . request("sherch") . "%");
-        // }
+        // search for analyses
+        $query->when($filters["analyses"] ?? false, function ($query, $analyses) {
+            return $query->whereExists(function ($query) use ($analyses) {
+                $query->select("id")
+                    ->from("labs")
+                    ->whereColumn("id", "analyses.id")
+                    ->where("name", $analyses);
+            });
+        });
     }
     protected $with = ["labs"];
     public function labs()

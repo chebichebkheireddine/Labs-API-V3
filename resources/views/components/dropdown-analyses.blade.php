@@ -5,7 +5,11 @@
         </button>
         <ul class="dropdown-menu" style="overflow: auto;max-height: 300px;">
             @foreach ($analyses as $item)
-                <li><a class="dropdown-item" href="/?analyses={{ $item->name }}">{{ $item->name }}</a>
+                @if (route('home-page'))
+                    <li><a class="dropdown-item" href="/labs/?labs={{ $item->id }}">{{ $item->name }}</a>
+                    @else
+                    <li><a class="dropdown-item" href="/labs/?labs={{ $item->id }}">{{ $item->name }}</a>
+                @endif
                 </li>
             @endforeach
         </ul>

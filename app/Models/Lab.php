@@ -17,19 +17,16 @@ class Lab extends Model
             return $query->where("name", "like", "%" . $search . "%")
                 ->orWhere("address", "like", "%" . $search . "%");
         });
-        // Lab  category search
-        // $query->when($filters["analyses"] ?? false, function ($query, $search) {
-        //     return $query->where("name", "like", "%" . $search . "%")
-        //         ->orWhere("address", "like", "%" . $search . "%");
-        // });
-        $query->when($filters["analyses"] ?? false, function ($query, $analyses) {
+        // when to bulde the scope query localy
+        $query->when($filters["labs"] ?? false, function ($query, $analyses) {
             return $query->whereExists(function ($query) use ($analyses) {
                 $query->select("id")
                     ->from("analyses")
                     ->whereColumn("id", "labs.id")
-                    ->where("name", $analyses);
+                    ->where("id", $analyses);
             });
         });
+
 
 
 

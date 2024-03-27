@@ -12,12 +12,12 @@
                         <footer class="blockquote-footer">Address {{ $lab->address }} </footer>
                         <p>available analysis </p>
                         @foreach ($lab->analyses as $analysis)
-                            <a href="/labs/{{ $analysis->lab_id }}" type="button"
+                            <a href="/Analyses/{{ $analysis->lab_id }}" type="button"
                                 class="btn btn-outline-primary">{{ $analysis->name }}</a>
                         @endforeach
                     </blockquote>
 
-                    <a href="/labs/{{ $lab->id }}" class="btn btn-primary">More information</a>
+                    <a href="/labs/?labs={{ $lab->id }}" class="btn btn-primary">More information</a>
                 </div>
             </div>
             <!-- Content here -->

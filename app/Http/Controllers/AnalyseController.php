@@ -23,7 +23,7 @@ class AnalyseController extends Controller
         //This is Analyse
         $analyses = Analyse::query();
         return view('analyses', [
-            "analyses" => $analyses->filter(request(["search"]))->get(),
+            "analyses" => $analyses->filter(request(["search", "labs"]))->get(),
             // 'currentLab' => $analyse,
 
         ]);

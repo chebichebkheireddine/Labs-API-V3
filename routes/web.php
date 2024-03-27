@@ -19,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LabController::class, "index"])->name("home-page");
 Route::get('/Analyses', [AnalyseController::class, "index"])->name("analyses");
-Route::get("/labs", function () {
-    return view("home-page", [
-        "labs" => Lab::all(),
-        "analyses" => Analyse::all()
-    ]);
-})->name("labs");
+Route::get("/labs", [LabController::class, "index"])->name("labs");
+
 // Labs change to /?labs
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs", [
@@ -33,10 +29,10 @@ Route::get("/labs/{labs}", function (Lab $labs) {
         "analyses" => Analyse::all()
     ]);
 })->name("labs-tag");
-// Route::get("/Analyses/{analyse}", function (Analyse $analyse) {
-//     return view("analyse", [
-//         "analyse" => $analyse,
-//         'currentLab' => $analyse,
-//         "analyses" => Analyse::all()->load("labs")
-//     ]);
-// })->name("analyse-tag");
+Route::get("/Analyses/{analyse}", function (Analyse $analyse) {
+    return view("analyse", [
+        "analyse" => $analyse,
+        'currentLab' => $analyse,
+        "analyses" => Analyse::all()->load("labs")
+    ]);
+})->name("analyse-tag");
