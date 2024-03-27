@@ -1,26 +1,13 @@
 <div class="col-3 d-flex justify-content-center mb-3">
-    <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-            {{ isset($currentLab) ? $currentLab->name : 'Analyses' }}
-        </button>
-        <ul class="dropdown-menu" style="overflow: auto;max-height: 300px;">
-            @foreach ($analyses as $item)
-                @if (route('home-page'))
-                    <li><a class="dropdown-item" href="/labs/?labs={{ $item->id }}">{{ $item->name }}</a>
-                    @else
-                    <li><a class="dropdown-item" href="/labs/?labs={{ $item->id }}">{{ $item->name }}</a>
-                @endif
-                </li>
-            @endforeach
-        </ul>
-    </div>
+    {{-- call drop-down-itme  --}}
+    <x-drop-down-item>
+    </x-drop-down-item>
 
 </div>
 <div class="col-6  mt-3">
     <form action="#" method="get">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" value="{{ request('search') }}"
-                placeholder="Search">
+            <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="Search">
         </div>
 </div>
 </div>

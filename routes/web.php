@@ -25,14 +25,10 @@ Route::get("/labs", [LabController::class, "index"])->name("labs");
 Route::get("/labs/{labs}", function (Lab $labs) {
     return view("labs", [
         "labs" => $labs,
-        'currentLab' => $labs,
-        "analyses" => Analyse::all()
     ]);
 })->name("labs-tag");
 Route::get("/Analyses/{analyse}", function (Analyse $analyse) {
     return view("analyse", [
         "analyse" => $analyse,
-        'currentLab' => $analyse,
-        "analyses" => Analyse::all()->load("labs")
     ]);
 })->name("analyse-tag");

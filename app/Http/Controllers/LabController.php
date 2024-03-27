@@ -39,7 +39,7 @@ class LabController extends Controller
         $labs = Lab::query();
 
         return view('home-page', [
-            "labs" => $labs->filter(request(["search", "analyses", "labs"]))->get(),
+            "labs" => $labs->filter(request(["search", "labs"]))->get(),
             "analyses" => Analyse::all(),
         ]);
     }
