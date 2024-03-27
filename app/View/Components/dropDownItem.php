@@ -17,7 +17,7 @@ class dropDownItem extends Component
     public function render()
     {
         return view('components.drop-down-item', [
-            'currentLab' => Analyse::firstWhere("name", request("labs")),
+            'currentLab' => Analyse::firstWhere("id", request("labs")),
             "items" => Analyse::all(),
             "analyses" => Analyse::all(),
         ]);
